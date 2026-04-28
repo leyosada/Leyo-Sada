@@ -8,11 +8,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     :root{
-      --electric:#0000FF;          /* accent only */
-      --blue:#1E3A8A;              /* primary trust color */
-      --bg:#F9FAFB;                /* soft white background */
-      --white:#FFFFFF;             /* pure white */
-      --ink:#0F172A;               /* deep neutral */
+      --electric:#0000FF;
+      --blue:#1E3A8A;
+      --bg:#F9FAFB;
+      --white:#FFFFFF;
+      --ink:#0F172A;
       --muted:#6B7280;
       --panel:#ffffffee;
       --radius:16px;
@@ -30,7 +30,6 @@
       background:var(--bg);
       line-height:1.4;
       -webkit-font-smoothing:antialiased;
-      text-rendering:optimizeLegibility;
     }
 
     a{color:inherit;text-decoration:none}
@@ -55,14 +54,11 @@
     .brand{
       display:flex; align-items:center; gap:12px; font-weight:600; letter-spacing:.02em; color:var(--blue);
     }
-    .brand-mark{
-      position:relative; width:44px; height:44px; border-radius:999px;
-      border:2px solid var(--blue);
-      display:grid; place-items:center; font-size:12px; font-weight:600;
-    }
-    .brand-mark::after{
-      content:""; position:absolute; inset:-6px; border-radius:999px;
-      border:1px solid rgba(30,58,138,.18);
+    .brand-logo{
+      height:44px;
+      width:44px;
+      border-radius:50%;
+      object-fit:cover;
     }
     nav ul{display:flex; gap:26px; list-style:none; margin:0; padding:0}
     nav a{color:var(--blue); font-weight:500; font-size:14px; opacity:.9}
@@ -78,7 +74,6 @@
     .cta.alt{background:var(--electric); box-shadow:0 8px 24px rgba(0,0,255,.22)}
     .cta.alt:hover{box-shadow:0 12px 30px rgba(0,0,255,.28)}
 
-    /* HERO */
     .hero{
       position:relative; overflow:hidden;
       padding:64px 0 88px;
@@ -96,7 +91,6 @@
       .hero .grid{grid-template-columns:1fr; gap:36px}
     }
 
-    /* Product mock stage */
     .stage{
       position:relative; aspect-ratio: 4 / 3; max-width:680px; margin-inline:auto;
       background:
@@ -134,7 +128,6 @@
       box-shadow: inset 0 8px 18px rgba(0,0,0,.04);
     }
 
-    /* Jar mock */
     .jar{
       position:absolute; left:10%; bottom:10%;
       width:min(38%, 300px); height:auto;
@@ -170,7 +163,6 @@
       background:radial-gradient(120px 18px at 40% 50%, rgba(9,25,77,.28), transparent 70%);
     }
 
-    /* Box mock */
     .box{
       position:absolute; left:36%; bottom:13%;
       width:min(48%, 420px);
@@ -217,8 +209,6 @@
     }
     .muted-btn:hover{border-color:var(--electric); color:var(--electric)}
 
-    /* BENEFITS */
-    section{position:relative}
     .benefits{
       padding:84px 0; overflow:hidden;
       background:
@@ -255,7 +245,6 @@
     @media (max-width:920px){ .benefit-grid{grid-template-columns:1fr 1fr} }
     @media (max-width:560px){ .benefit-grid{grid-template-columns:1fr} }
 
-    /* SCIENCE */
     .science{
       padding:86px 0;
       background:
@@ -301,7 +290,6 @@
     .science-item i{color:var(--blue)}
     .science-item strong{color:var(--blue)}
 
-    /* ORDER */
     .order{
       padding:92px 0; background:var(--white);
       border-top:1px solid rgba(30,58,138,.08); border-bottom:1px solid rgba(30,58,138,.08);
@@ -329,7 +317,6 @@
     .order-list .row i{color:var(--electric); margin-top:2px}
     .note{color:#475569; font-size:13px}
 
-    /* BRAND MESSAGE */
     .brand-msg{
       position:relative; padding:110px 0; text-align:center; overflow:hidden;
       background:
@@ -348,7 +335,6 @@
       color:#334155; margin:0 auto 22px; max-width:720px; font-size:18px
     }
 
-    /* FOOTER */
     footer{
       padding:36px 0 46px; background:#ffffff; color:#334155; border-top:1px solid rgba(30,58,138,.08)
     }
@@ -356,8 +342,13 @@
       display:flex; gap:18px; align-items:center; justify-content:space-between; flex-wrap:wrap
     }
     .foot small{color:#64748b}
+    .footer-logo{
+      height:36px;
+      width:36px;
+      border-radius:50%;
+      object-fit:cover;
+    }
 
-    /* Modal */
     .modal-backdrop{
       position:fixed; inset:0; display:none; place-items:center; background:rgba(10,16,28,.32); backdrop-filter:blur(4px); z-index:100;
     }
@@ -379,7 +370,6 @@
     .close{background:transparent; border:none; color:#334155; cursor:pointer; padding:8px 10px}
     .ok{background:var(--electric); color:#fff; border:none; padding:10px 16px; border-radius:999px; font-weight:600; cursor:pointer}
 
-    /* Reveal animations */
     [data-reveal]{opacity:0; transform:translateY(16px); transition:opacity .6s ease, transform .6s ease}
     [data-reveal].reveal-in{opacity:1; transform:none}
   </style>
@@ -388,7 +378,7 @@
   <header class="nav">
     <div class="container nav-inner">
       <a class="brand" href="#top" aria-label="Leyo Sada">
-        <span class="brand-mark" aria-hidden="true"></span>
+        <img class="brand-logo" src="Gemini_Generated_Image_dpc80dpc80dpc80dpc80dpc80dpc80dpc80dpc8.png" alt="Leyo Sada Logo">
         <span>Leyo Sada</span>
       </a>
       <nav aria-label="Primary">
@@ -403,16 +393,13 @@
     </div>
   </header>
 
-  <!-- HERO -->
   <section class="hero" id="top">
     <div class="container grid">
-      <!-- Product Left -->
       <div class="stage" aria-label="Product presentation: frosted glass jar on clinical table" data-reveal>
         <div class="lab-blur beaker"></div>
         <div class="lab-blur cyl"></div>
         <div class="table"></div>
 
-        <!-- Jar -->
         <div class="jar" aria-hidden="true">
           <div class="jar-lid"></div>
           <div class="jar-body">
@@ -426,7 +413,6 @@
           <div class="jar-shadow"></div>
         </div>
 
-        <!-- Box -->
         <div class="box">
           <div class="top-line">
             <span style="font-weight:600; letter-spacing:.06em;">GLASS GLOW</span>
@@ -440,7 +426,6 @@
         </div>
       </div>
 
-      <!-- Copy Right -->
       <div class="hero-copy" data-reveal>
         <div class="kicker">Leyo Sada</div>
         <h1>Whitening Cream</h1>
@@ -454,7 +439,6 @@
     </div>
   </section>
 
-  <!-- BENEFITS -->
   <section class="benefits" id="benefits">
     <div class="flow-bg" aria-hidden="true"></div>
     <div class="container" data-reveal>
@@ -498,7 +482,6 @@
     </div>
   </section>
 
-  <!-- SCIENCE -->
   <section class="science" id="science">
     <div class="lab-strip" aria-hidden="true"></div>
     <div class="container science-grid">
@@ -535,7 +518,6 @@
     </div>
   </section>
 
-  <!-- ORDER -->
   <section class="order" id="order">
     <div class="container order-grid">
       <div class="pack-stage" aria-label="Clean packaging setup on a white table" data-reveal>
@@ -579,7 +561,6 @@
     </div>
   </section>
 
-  <!-- BRAND MESSAGE -->
   <section class="brand-msg" id="brand">
     <div class="glow" aria-hidden="true"></div>
     <div class="container" data-reveal style="text-align:center">
@@ -592,13 +573,13 @@
   <footer>
     <div class="container foot">
       <div style="display:flex; align-items:center; gap:12px; color:var(--blue); font-weight:600">
-        <span class="brand-mark" aria-hidden="true" style="width:36px;height:36px"></span> Leyo Sada
+        <img class="footer-logo" src="Gemini_Generated_Image_dpc80dpc80dpc80dpc80dpc80dpc80dpc80dpc8.png" alt="Leyo Sada Logo">
+        Leyo Sada
       </div>
       <small>© <span id="y"></span> Leyo Sada Skincare. Dermatology‑inspired skincare. All rights reserved.</small>
     </div>
   </footer>
 
-  <!-- Modal -->
   <div class="modal-backdrop" id="modal">
     <div class="modal" role="dialog" aria-modal="true" aria-labelledby="orderTitle">
       <h4 id="orderTitle">Message us to order</h4>
@@ -613,7 +594,7 @@
         </div>
         <div class="field">
           <label for="msg">Message</label>
-          <textarea id="msg" placeholder="Hi, I’d like to order Leyo Sada Whitening Cream. My delivery area is ..."></textarea>
+          <textarea id="msg" placeholder="Hi, I'd like to order Leyo Sada Whitening Cream. My delivery area is ..."></textarea>
         </div>
       </div>
       <div class="modal-actions">
@@ -627,7 +608,6 @@
   <script>
     feather.replace();
 
-    // Modal handlers
     const modal = document.getElementById('modal');
     const openers = ['orderTop','orderHero','orderMid','orderBottom'].map(id=>document.getElementById(id));
     const closeBtn = document.getElementById('closeModal');
@@ -640,16 +620,13 @@
     sendBtn.addEventListener('click', () => {
       const name = encodeURIComponent(document.getElementById('name').value || '');
       const contact = encodeURIComponent(document.getElementById('contact').value || '');
-      const message = encodeURIComponent(document.getElementById('msg').value || 'Hi, I’d like to order Leyo Sada Whitening Cream.');
-      // WhatsApp deep link (fallback to mailto)
+      const message = encodeURIComponent(document.getElementById('msg').value || 'Hi, I\'d like to order Leyo Sada Whitening Cream.');
       const wa = `https://wa.me/94711725398?text=${message}%0AName:%20${name}%0AContact:%20${contact}`;
       window.open(wa, '_blank', 'noopener');
     });
 
-    // Year
     document.getElementById('y').textContent = new Date().getFullYear();
 
-    // Reveal on scroll
     const io = new IntersectionObserver((entries)=>{
       for(const e of entries){
         if(e.isIntersecting){ e.target.classList.add('reveal-in'); io.unobserve(e.target); }
